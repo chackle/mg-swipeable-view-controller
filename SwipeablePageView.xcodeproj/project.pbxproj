@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		54BC85021AE022A2002116E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BC85011AE022A2002116E5 /* AppDelegate.swift */; };
-		54BC85041AE022A2002116E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BC85031AE022A2002116E5 /* ViewController.swift */; };
 		54BC85071AE022A2002116E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54BC85051AE022A2002116E5 /* Main.storyboard */; };
 		54BC85091AE022A2002116E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BC85081AE022A2002116E5 /* Images.xcassets */; };
 		54BC850C1AE022A2002116E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BC850A1AE022A2002116E5 /* LaunchScreen.xib */; };
 		54BC85181AE022A2002116E5 /* SwipeablePageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BC85171AE022A2002116E5 /* SwipeablePageViewTests.swift */; };
+		54F93DAA1AE1082600112F48 /* MGSwipeableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DA91AE1082600112F48 /* MGSwipeableScrollView.swift */; };
+		54F93DB01AE111AD00112F48 /* MGSwipeableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */; };
+		54F93DB11AE111AD00112F48 /* MGSwipeableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		54BC84FC1AE022A2002116E5 /* SwipeablePageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeablePageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BC85001AE022A2002116E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54BC85011AE022A2002116E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54BC85031AE022A2002116E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		54BC85061AE022A2002116E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54BC85081AE022A2002116E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		54BC850B1AE022A2002116E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		54BC85111AE022A2002116E5 /* SwipeablePageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeablePageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BC85161AE022A2002116E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54BC85171AE022A2002116E5 /* SwipeablePageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePageViewTests.swift; sourceTree = "<group>"; };
+		54F93DA91AE1082600112F48 /* MGSwipeableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeableScrollView.swift; path = MGSwipeablePageView/MGSwipeableScrollView.swift; sourceTree = "<group>"; };
+		54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeableViewController.swift; path = MGSwipeablePageView/MGSwipeableViewController.swift; sourceTree = "<group>"; };
+		54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MGSwipeableViewController.xib; path = MGSwipeablePageView/MGSwipeableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +81,8 @@
 		54BC84FE1AE022A2002116E5 /* SwipeablePageView */ = {
 			isa = PBXGroup;
 			children = (
-				54BC85011AE022A2002116E5 /* AppDelegate.swift */,
-				54BC85031AE022A2002116E5 /* ViewController.swift */,
-				54BC85051AE022A2002116E5 /* Main.storyboard */,
-				54BC85081AE022A2002116E5 /* Images.xcassets */,
-				54BC850A1AE022A2002116E5 /* LaunchScreen.xib */,
-				54BC84FF1AE022A2002116E5 /* Supporting Files */,
+				54BC85241AE023A5002116E5 /* Example */,
+				54BC85211AE0235F002116E5 /* MGSwipeableViewController */,
 			);
 			path = SwipeablePageView;
 			sourceTree = "<group>";
@@ -110,6 +110,28 @@
 				54BC85161AE022A2002116E5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54BC85211AE0235F002116E5 /* MGSwipeableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */,
+				54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */,
+				54F93DA91AE1082600112F48 /* MGSwipeableScrollView.swift */,
+			);
+			name = MGSwipeableViewController;
+			sourceTree = "<group>";
+		};
+		54BC85241AE023A5002116E5 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				54BC85011AE022A2002116E5 /* AppDelegate.swift */,
+				54BC85051AE022A2002116E5 /* Main.storyboard */,
+				54BC85081AE022A2002116E5 /* Images.xcassets */,
+				54BC850A1AE022A2002116E5 /* LaunchScreen.xib */,
+				54BC84FF1AE022A2002116E5 /* Supporting Files */,
+			);
+			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54BC85071AE022A2002116E5 /* Main.storyboard in Resources */,
+				54F93DB11AE111AD00112F48 /* MGSwipeableViewController.xib in Resources */,
 				54BC850C1AE022A2002116E5 /* LaunchScreen.xib in Resources */,
 				54BC85091AE022A2002116E5 /* Images.xcassets in Resources */,
 			);
@@ -212,7 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54BC85041AE022A2002116E5 /* ViewController.swift in Sources */,
+				54F93DAA1AE1082600112F48 /* MGSwipeableScrollView.swift in Sources */,
+				54F93DB01AE111AD00112F48 /* MGSwipeableViewController.swift in Sources */,
 				54BC85021AE022A2002116E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +433,7 @@
 				54BC851D1AE022A2002116E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54BC851E1AE022A2002116E5 /* Build configuration list for PBXNativeTarget "SwipeablePageViewTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +442,7 @@
 				54BC85201AE022A2002116E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
