@@ -10,7 +10,7 @@ import UIKit
 
 class MGSwipeableViewController: UIViewController {
 
-  let viewControllers: [UIViewController]
+  var viewControllers: [UIViewController]
   
   @IBOutlet var pageView: MGSwipeablePageView!
   @IBOutlet var pageHeader: MGSwipeablePageHeader!
@@ -29,8 +29,17 @@ class MGSwipeableViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.view.setNeedsLayout()
+    self.view.layoutIfNeeded()
     var vc1 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
+    var vc2 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
+    vc2.view.backgroundColor = UIColor.blueColor()
     self.addViewController(vc1)
+    self.addViewController(vc2)
   }
 
   override func didReceiveMemoryWarning() {
@@ -38,7 +47,6 @@ class MGSwipeableViewController: UIViewController {
   }
   
   override func loadView() {
-    println(1)
     NSBundle.mainBundle().loadNibNamed("MGSwipeableViewController", owner: self, options: nil)
   }
   
@@ -46,7 +54,25 @@ class MGSwipeableViewController: UIViewController {
   
   func addViewController(viewController: UIViewController) {
     self.addChildViewController(viewController)
+    var frame = pageView.bounds
+    frame.origin.x = getCurrentXOffset()
+    viewController.view.frame = frame
+    println(viewController.view.frame)
+    println(pageView.bounds)
     viewController.didMoveToParentViewController(self)
     pageView.addSubview(viewController.view)
+    viewControllers.append(viewController)
+    adjustContentSize()
+  }
+  
+  private func getCurrentXOffset() -> CGFloat {
+    let numPages = viewControllers.count
+    return CGFloat(numPages) * pageView.bounds.width
+  }
+  
+  private func adjustContentSize() {
+    let contentWidth = pageView.frame.size.width * CGFloat(viewControllers.count)
+    println("Content width: \(contentWidth)")
+    pageView.contentSize = CGSizeMake(contentWidth, pageView.contentSize.height)
   }
 }

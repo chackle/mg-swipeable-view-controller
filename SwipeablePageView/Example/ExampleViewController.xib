@@ -13,7 +13,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apR-au-Nxc">
+                    <rect key="frame" x="279" y="56" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="0.90571925949999998" green="0.29431765560000001" blue="0.1834525367" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="apR-au-Nxc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="87O-im-UL4"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="apR-au-Nxc" secondAttribute="bottom" constant="523" id="8yc-u1-sBu"/>
+                <constraint firstAttribute="centerX" secondItem="apR-au-Nxc" secondAttribute="centerX" id="ohw-Dq-9dV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
 </document>
