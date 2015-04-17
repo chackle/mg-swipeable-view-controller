@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MGSwipeableScrollView: UIScrollView {
+class MGSwipeablePageView: UIScrollView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)

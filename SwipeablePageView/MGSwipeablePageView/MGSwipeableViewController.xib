@@ -6,35 +6,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MGSwipeableViewController" customModule="SwipeablePageView" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="pageHeader" destination="hAO-CY-ZfD" id="aZF-Iw-0ks"/>
+                <outlet property="pageView" destination="wDE-ia-boR" id="uxD-F5-LmB"/>
+                <outlet property="view" destination="aP4-Zb-W8d" id="Mbc-RY-2Xa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view contentMode="scaleToFill" id="aP4-Zb-W8d">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPR-Ik-0x7">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAO-CY-ZfD" userLabel="PageHeaderView" customClass="MGSwipeablePageHeader" customModule="SwipeablePageView" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="84" id="kqz-Qy-qd0"/>
+                        <constraint firstAttribute="height" constant="84" id="hkJ-Gt-nCB"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C29-zG-wpM">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDE-ia-boR" userLabel="PageScrollView" customClass="MGSwipeablePageView" customModule="SwipeablePageView" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="84" width="600" height="516"/>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="C29-zG-wpM" firstAttribute="top" secondItem="uPR-Ik-0x7" secondAttribute="bottom" id="78F-0R-Nv7"/>
-                <constraint firstAttribute="bottom" secondItem="C29-zG-wpM" secondAttribute="bottom" id="VxD-di-QDi"/>
-                <constraint firstItem="C29-zG-wpM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZzZ-eO-JGc"/>
-                <constraint firstAttribute="trailing" secondItem="C29-zG-wpM" secondAttribute="trailing" id="fep-Jm-Yxv"/>
-                <constraint firstItem="uPR-Ik-0x7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hi0-5d-cZq"/>
-                <constraint firstAttribute="trailing" secondItem="uPR-Ik-0x7" secondAttribute="trailing" id="qsp-u1-4V3"/>
-                <constraint firstItem="uPR-Ik-0x7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zfu-ZH-GUQ"/>
+                <constraint firstItem="wDE-ia-boR" firstAttribute="top" secondItem="hAO-CY-ZfD" secondAttribute="bottom" id="8Co-0p-Fjv"/>
+                <constraint firstItem="hAO-CY-ZfD" firstAttribute="top" secondItem="aP4-Zb-W8d" secondAttribute="top" id="Lek-ts-rzt"/>
+                <constraint firstItem="wDE-ia-boR" firstAttribute="leading" secondItem="aP4-Zb-W8d" secondAttribute="leading" id="bec-hz-1ZP"/>
+                <constraint firstAttribute="trailing" secondItem="hAO-CY-ZfD" secondAttribute="trailing" id="l4x-jS-nak"/>
+                <constraint firstAttribute="bottom" secondItem="wDE-ia-boR" secondAttribute="bottom" id="nXx-N8-hJb"/>
+                <constraint firstItem="hAO-CY-ZfD" firstAttribute="leading" secondItem="aP4-Zb-W8d" secondAttribute="leading" id="oo1-9t-Dga"/>
+                <constraint firstAttribute="trailing" secondItem="wDE-ia-boR" secondAttribute="trailing" id="xrZ-6m-3Tr"/>
             </constraints>
+            <point key="canvasLocation" x="27" y="456"/>
         </view>
     </objects>
 </document>

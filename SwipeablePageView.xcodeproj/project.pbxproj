@@ -12,9 +12,12 @@
 		54BC85091AE022A2002116E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BC85081AE022A2002116E5 /* Images.xcassets */; };
 		54BC850C1AE022A2002116E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BC850A1AE022A2002116E5 /* LaunchScreen.xib */; };
 		54BC85181AE022A2002116E5 /* SwipeablePageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BC85171AE022A2002116E5 /* SwipeablePageViewTests.swift */; };
-		54F93DAA1AE1082600112F48 /* MGSwipeableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DA91AE1082600112F48 /* MGSwipeableScrollView.swift */; };
+		54F93DAA1AE1082600112F48 /* MGSwipeablePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DA91AE1082600112F48 /* MGSwipeablePageView.swift */; };
 		54F93DB01AE111AD00112F48 /* MGSwipeableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */; };
 		54F93DB11AE111AD00112F48 /* MGSwipeableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */; };
+		54F93DB31AE115BF00112F48 /* MGSwipeablePageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DB21AE115BF00112F48 /* MGSwipeablePageHeader.swift */; };
+		54F93DB61AE1186500112F48 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DB41AE1186500112F48 /* ExampleViewController.swift */; };
+		54F93DB71AE1186500112F48 /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F93DB51AE1186500112F48 /* ExampleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +40,12 @@
 		54BC85111AE022A2002116E5 /* SwipeablePageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeablePageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BC85161AE022A2002116E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54BC85171AE022A2002116E5 /* SwipeablePageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePageViewTests.swift; sourceTree = "<group>"; };
-		54F93DA91AE1082600112F48 /* MGSwipeableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeableScrollView.swift; path = MGSwipeablePageView/MGSwipeableScrollView.swift; sourceTree = "<group>"; };
+		54F93DA91AE1082600112F48 /* MGSwipeablePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeablePageView.swift; path = MGSwipeablePageView/MGSwipeablePageView.swift; sourceTree = "<group>"; };
 		54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeableViewController.swift; path = MGSwipeablePageView/MGSwipeableViewController.swift; sourceTree = "<group>"; };
 		54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MGSwipeableViewController.xib; path = MGSwipeablePageView/MGSwipeableViewController.xib; sourceTree = "<group>"; };
+		54F93DB21AE115BF00112F48 /* MGSwipeablePageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeablePageHeader.swift; path = MGSwipeablePageView/MGSwipeablePageHeader.swift; sourceTree = "<group>"; };
+		54F93DB41AE1186500112F48 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleViewController.swift; path = Example/ExampleViewController.swift; sourceTree = "<group>"; };
+		54F93DB51AE1186500112F48 /* ExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExampleViewController.xib; path = Example/ExampleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +123,8 @@
 			children = (
 				54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */,
 				54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */,
-				54F93DA91AE1082600112F48 /* MGSwipeableScrollView.swift */,
+				54F93DA91AE1082600112F48 /* MGSwipeablePageView.swift */,
+				54F93DB21AE115BF00112F48 /* MGSwipeablePageHeader.swift */,
 			);
 			name = MGSwipeableViewController;
 			sourceTree = "<group>";
@@ -126,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				54BC85011AE022A2002116E5 /* AppDelegate.swift */,
+				54F93DB41AE1186500112F48 /* ExampleViewController.swift */,
+				54F93DB51AE1186500112F48 /* ExampleViewController.xib */,
 				54BC85051AE022A2002116E5 /* Main.storyboard */,
 				54BC85081AE022A2002116E5 /* Images.xcassets */,
 				54BC850A1AE022A2002116E5 /* LaunchScreen.xib */,
@@ -218,6 +227,7 @@
 				54F93DB11AE111AD00112F48 /* MGSwipeableViewController.xib in Resources */,
 				54BC850C1AE022A2002116E5 /* LaunchScreen.xib in Resources */,
 				54BC85091AE022A2002116E5 /* Images.xcassets in Resources */,
+				54F93DB71AE1186500112F48 /* ExampleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,9 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F93DAA1AE1082600112F48 /* MGSwipeableScrollView.swift in Sources */,
+				54F93DB31AE115BF00112F48 /* MGSwipeablePageHeader.swift in Sources */,
+				54F93DAA1AE1082600112F48 /* MGSwipeablePageView.swift in Sources */,
 				54F93DB01AE111AD00112F48 /* MGSwipeableViewController.swift in Sources */,
 				54BC85021AE022A2002116E5 /* AppDelegate.swift in Sources */,
+				54F93DB61AE1186500112F48 /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
