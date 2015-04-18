@@ -37,9 +37,14 @@ class MGSwipeableViewController: UIViewController {
     self.view.layoutIfNeeded()
     var vc1 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
     var vc2 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
+    var vc3 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
+    var vc4 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
+    var vc5 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
     vc2.view.backgroundColor = UIColor.blueColor()
-    self.addViewController(vc1)
-    self.addViewController(vc2)
+    vc3.view.backgroundColor = UIColor.greenColor()
+    vc4.view.backgroundColor = UIColor.grayColor()
+    vc5.view.backgroundColor = UIColor.purpleColor()
+    self.addViewControllers([vc1, vc2, vc3, vc4, vc5])
   }
 
   override func didReceiveMemoryWarning() {
@@ -51,6 +56,12 @@ class MGSwipeableViewController: UIViewController {
   }
   
   // MARK: Functional
+  
+  func addViewControllers(viewControllers: [UIViewController]) {
+    for var i = 0; i < viewControllers.count; i++ {
+      addViewController(viewControllers[i])
+    }
+  }
   
   func addViewController(viewController: UIViewController) {
     self.addChildViewController(viewController)
@@ -73,6 +84,6 @@ class MGSwipeableViewController: UIViewController {
   private func adjustContentSize() {
     let contentWidth = pageView.frame.size.width * CGFloat(viewControllers.count)
     println("Content width: \(contentWidth)")
-    pageView.contentSize = CGSizeMake(contentWidth, pageView.contentSize.height)
+    pageView.contentSize = CGSizeMake(contentWidth, pageView.frame.size.height)
   }
 }
