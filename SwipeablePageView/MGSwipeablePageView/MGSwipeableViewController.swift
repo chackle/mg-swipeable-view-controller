@@ -8,9 +8,11 @@
 
 import UIKit
 
+typealias PageTuple = (viewController: UIViewController, name: String)
+
 class MGSwipeableViewController: UIViewController {
 
-  var viewControllers: [UIViewController]
+  var pages: [PageTuple]
   
   @IBOutlet var pageView: MGSwipeablePageView!
   @IBOutlet var pageHeader: MGSwipeablePageHeader!
@@ -18,12 +20,12 @@ class MGSwipeableViewController: UIViewController {
   // MARK: Lifecycle
   
   required init(coder aDecoder: NSCoder) {
-    viewControllers = [UIViewController]()
+    pages = [PageTuple]()
     super.init(coder: aDecoder)
   }
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-    viewControllers = [UIViewController]()
+    pages = [PageTuple]()
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
@@ -44,7 +46,7 @@ class MGSwipeableViewController: UIViewController {
     vc3.view.backgroundColor = UIColor.greenColor()
     vc4.view.backgroundColor = UIColor.grayColor()
     vc5.view.backgroundColor = UIColor.purpleColor()
-    self.addViewControllers([vc1, vc2, vc3, vc4, vc5])
+    self.addViewControllers([vc1, vc2, vc3, vc4, vc5], withTitles:["VC1", "VC2", "VC3", "VC4", "VC5"])
   }
 
   override func didReceiveMemoryWarning() {
@@ -57,13 +59,13 @@ class MGSwipeableViewController: UIViewController {
   
   // MARK: Functional
   
-  func addViewControllers(viewControllers: [UIViewController]) {
+  func addViewControllers(viewControllers: [UIViewController], withTitles titles: [String]) {
     for var i = 0; i < viewControllers.count; i++ {
-      addViewController(viewControllers[i])
+      addViewController(viewControllers[i], withTitle:titles[i])
     }
   }
   
-  func addViewController(viewController: UIViewController) {
+  func addViewController(viewController: UIViewController, withTitle title: String) {
     self.addChildViewController(viewController)
     var frame = pageView.bounds
     frame.origin.x = getCurrentXOffset()
@@ -72,17 +74,17 @@ class MGSwipeableViewController: UIViewController {
     println(pageView.bounds)
     viewController.didMoveToParentViewController(self)
     pageView.addSubview(viewController.view)
-    viewControllers.append(viewController)
+    pages.append((viewController, title))
     adjustContentSize()
   }
   
   private func getCurrentXOffset() -> CGFloat {
-    let numPages = viewControllers.count
+    let numPages = pages.count
     return CGFloat(numPages) * pageView.bounds.width
   }
   
   private func adjustContentSize() {
-    let contentWidth = pageView.frame.size.width * CGFloat(viewControllers.count)
+    let contentWidth = pageView.frame.size.width * CGFloat(pages.count)
     println("Content width: \(contentWidth)")
     pageView.contentSize = CGSizeMake(contentWidth, pageView.frame.size.height)
   }

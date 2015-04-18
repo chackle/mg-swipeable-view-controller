@@ -16,6 +16,7 @@ class MGSwipeablePageView: UIScrollView, UIScrollViewDelegate {
     self.delegate = self
     self.delaysContentTouches = false
     self.showsHorizontalScrollIndicator = false
+    self.pagingEnabled = true
   }
   
   required init(coder aDecoder: NSCoder) {
@@ -23,15 +24,10 @@ class MGSwipeablePageView: UIScrollView, UIScrollViewDelegate {
     self.delegate = self
     self.delaysContentTouches = false
     self.showsHorizontalScrollIndicator = false
+    self.pagingEnabled = true
   }
   
   func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    let numPages = scrollView.contentSize.width / scrollView.frame.size.width
-    let position = scrollView.contentOffset.x / scrollView.frame.size.width
-    let snapPosition = round(position)
-    let snapOffset = (snapPosition * scrollView.frame.size.width)
-    let scrollRect = CGRectMake(snapOffset, 0, scrollView.frame.size.width, scrollView.frame.size.height)
-    scrollView.scrollRectToVisible(scrollRect, animated: true)
-    println(scrollRect)
+    
   }
 }
