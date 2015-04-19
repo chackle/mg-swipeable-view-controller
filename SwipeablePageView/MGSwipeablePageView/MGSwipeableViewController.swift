@@ -10,7 +10,7 @@ import UIKit
 
 typealias PageTuple = (viewController: UIViewController, name: String)
 
-class MGSwipeableViewController: UIViewController {
+class MGSwipeableViewController: UIViewController, UIScrollViewDelegate, MGSwipeablePageHeaderDelegate {
 
   var pages: [PageTuple]
   
@@ -31,6 +31,9 @@ class MGSwipeableViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    pageView.delegate = self
+    pageHeader.delegate = self
+    pageHeader.pageDelegate = self
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -46,7 +49,8 @@ class MGSwipeableViewController: UIViewController {
     vc3.view.backgroundColor = UIColor.greenColor()
     vc4.view.backgroundColor = UIColor.grayColor()
     vc5.view.backgroundColor = UIColor.purpleColor()
-    self.addViewControllers([vc1, vc2, vc3, vc4, vc5], withTitles:["VC1", "VC2", "VC3", "VC4", "VC5"])
+    self.addViewControllers([vc1, vc2, vc3, vc4, vc5], withTitles:["News Feed", "Some List", "Settings", "Profile", "Stuff"])
+    pageHeader.addPages(pages)
   }
 
   override func didReceiveMemoryWarning() {
@@ -55,6 +59,30 @@ class MGSwipeableViewController: UIViewController {
   
   override func loadView() {
     NSBundle.mainBundle().loadNibNamed("MGSwipeableViewController", owner: self, options: nil)
+  }
+  
+  // MARK: UIScrollView Delegate
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    if scrollView.isEqual(pageView) {
+      let contentOffsetX = scrollView.contentOffset.x
+      let headerContentOffsetX = contentOffsetX / 3
+      var pageHeaderRect = pageHeader.bounds
+      pageHeaderRect.origin.x = headerContentOffsetX
+      pageHeader.scrollRectToVisible(pageHeaderRect, animated: false)
+    }
+    else if scrollView.isEqual(pageHeader) {
+      pageHeader.updateDisplayPropertiesForButtons()
+    }
+  }
+  
+  // MARK: MGSwipeablePageHeaderDelegate
+  
+  func pageHeader(pageHeader: MGSwipeablePageHeader, didSelectPosition position: Int) {
+    if pageHeader.isEqual(self.pageHeader) {
+      var pageRect = pageView.bounds
+      pageRect.origin.x = CGFloat(position) * pageRect.size.width
+      pageView.scrollRectToVisible(pageRect, animated: true)
+    }
   }
   
   // MARK: Functional
@@ -70,8 +98,6 @@ class MGSwipeableViewController: UIViewController {
     var frame = pageView.bounds
     frame.origin.x = getCurrentXOffset()
     viewController.view.frame = frame
-    println(viewController.view.frame)
-    println(pageView.bounds)
     viewController.didMoveToParentViewController(self)
     pageView.addSubview(viewController.view)
     pages.append((viewController, title))
@@ -85,7 +111,6 @@ class MGSwipeableViewController: UIViewController {
   
   private func adjustContentSize() {
     let contentWidth = pageView.frame.size.width * CGFloat(pages.count)
-    println("Content width: \(contentWidth)")
     pageView.contentSize = CGSizeMake(contentWidth, pageView.frame.size.height)
   }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5437EC701AE3A1F5003CE757 /* MGSwipeablePageHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5437EC6F1AE3A1F5003CE757 /* MGSwipeablePageHeaderDelegate.swift */; };
 		54BC85021AE022A2002116E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BC85011AE022A2002116E5 /* AppDelegate.swift */; };
 		54BC85071AE022A2002116E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54BC85051AE022A2002116E5 /* Main.storyboard */; };
 		54BC85091AE022A2002116E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BC85081AE022A2002116E5 /* Images.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5437EC6F1AE3A1F5003CE757 /* MGSwipeablePageHeaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeablePageHeaderDelegate.swift; path = MGSwipeablePageView/MGSwipeablePageHeaderDelegate.swift; sourceTree = "<group>"; };
 		54BC84FC1AE022A2002116E5 /* SwipeablePageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeablePageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BC85001AE022A2002116E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54BC85011AE022A2002116E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */,
 				54F93DA91AE1082600112F48 /* MGSwipeablePageView.swift */,
 				54F93DB21AE115BF00112F48 /* MGSwipeablePageHeader.swift */,
+				5437EC6F1AE3A1F5003CE757 /* MGSwipeablePageHeaderDelegate.swift */,
 			);
 			name = MGSwipeableViewController;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				54F93DB01AE111AD00112F48 /* MGSwipeableViewController.swift in Sources */,
 				54BC85021AE022A2002116E5 /* AppDelegate.swift in Sources */,
 				54F93DB61AE1186500112F48 /* ExampleViewController.swift in Sources */,
+				5437EC701AE3A1F5003CE757 /* MGSwipeablePageHeaderDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

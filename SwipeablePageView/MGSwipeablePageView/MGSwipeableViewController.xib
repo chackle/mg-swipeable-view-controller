@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MGSwipeableViewController" customModule="SwipeablePageView" customModuleProvider="target">
             <connections>
-                <outlet property="pageHeader" destination="hAO-CY-ZfD" id="aZF-Iw-0ks"/>
+                <outlet property="pageHeader" destination="exO-Qa-rvS" id="Bvs-sG-WeT"/>
                 <outlet property="pageView" destination="wDE-ia-boR" id="uxD-F5-LmB"/>
                 <outlet property="view" destination="aP4-Zb-W8d" id="Mbc-RY-2Xa"/>
             </connections>
@@ -16,13 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAO-CY-ZfD" userLabel="PageHeaderView" customClass="MGSwipeablePageHeader" customModule="SwipeablePageView" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="84" id="hkJ-Gt-nCB"/>
-                    </constraints>
-                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDE-ia-boR" userLabel="PageScrollView" customClass="MGSwipeablePageView" customModule="SwipeablePageView" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="84" width="600" height="516"/>
                     <constraints>
@@ -34,15 +27,22 @@
                         </mask>
                     </variation>
                 </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exO-Qa-rvS" userLabel="PageHeaderView" customClass="MGSwipeablePageHeader" customModule="SwipeablePageView" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="84" id="rDk-J5-HXs"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="wDE-ia-boR" firstAttribute="top" secondItem="hAO-CY-ZfD" secondAttribute="bottom" id="8Co-0p-Fjv"/>
-                <constraint firstItem="hAO-CY-ZfD" firstAttribute="top" secondItem="aP4-Zb-W8d" secondAttribute="top" id="Lek-ts-rzt"/>
+                <constraint firstItem="exO-Qa-rvS" firstAttribute="top" secondItem="aP4-Zb-W8d" secondAttribute="top" id="9qR-Ct-djR"/>
+                <constraint firstItem="wDE-ia-boR" firstAttribute="top" secondItem="exO-Qa-rvS" secondAttribute="bottom" id="DNh-8A-oeh"/>
                 <constraint firstItem="wDE-ia-boR" firstAttribute="leading" secondItem="aP4-Zb-W8d" secondAttribute="leading" id="bec-hz-1ZP"/>
-                <constraint firstAttribute="trailing" secondItem="hAO-CY-ZfD" secondAttribute="trailing" id="l4x-jS-nak"/>
+                <constraint firstAttribute="trailing" secondItem="exO-Qa-rvS" secondAttribute="trailing" id="c0T-VR-ghZ"/>
+                <constraint firstItem="exO-Qa-rvS" firstAttribute="leading" secondItem="aP4-Zb-W8d" secondAttribute="leading" id="h1x-eX-Pzj"/>
                 <constraint firstAttribute="bottom" secondItem="wDE-ia-boR" secondAttribute="bottom" id="nXx-N8-hJb"/>
-                <constraint firstItem="hAO-CY-ZfD" firstAttribute="leading" secondItem="aP4-Zb-W8d" secondAttribute="leading" id="oo1-9t-Dga"/>
                 <constraint firstAttribute="trailing" secondItem="wDE-ia-boR" secondAttribute="trailing" id="xrZ-6m-3Tr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

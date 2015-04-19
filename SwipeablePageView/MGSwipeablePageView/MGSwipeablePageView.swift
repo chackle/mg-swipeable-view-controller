@@ -9,11 +9,10 @@
 import Foundation
 import UIKit
 
-class MGSwipeablePageView: UIScrollView, UIScrollViewDelegate {
+class MGSwipeablePageView: UIScrollView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.delegate = self
     self.delaysContentTouches = false
     self.showsHorizontalScrollIndicator = false
     self.pagingEnabled = true
@@ -21,13 +20,8 @@ class MGSwipeablePageView: UIScrollView, UIScrollViewDelegate {
   
   required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    self.delegate = self
     self.delaysContentTouches = false
     self.showsHorizontalScrollIndicator = false
     self.pagingEnabled = true
-  }
-  
-  func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    
   }
 }
