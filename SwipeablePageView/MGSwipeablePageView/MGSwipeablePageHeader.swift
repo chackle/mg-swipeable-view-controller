@@ -14,17 +14,14 @@ class MGSwipeablePageHeader: UIScrollView {
   
   private var pages: [PageTuple]
   private var pageHeaderPairs: [PageHeaderPair]
-  private var currentPosition: Int
   
-  var lowerAlpha = CGFloat(0.3)
+  var lowerAlpha = CGFloat(0.2)
   var higherAlpha = CGFloat(1)
-  
   var pageDelegate: MGSwipeablePageHeaderDelegate?
   
   override init(frame: CGRect) {
     pages = [PageTuple]()
     pageHeaderPairs = [PageHeaderPair]()
-    currentPosition = 0
     super.init(frame: frame)
     self.pagingEnabled = true
     self.showsHorizontalScrollIndicator = false
@@ -34,16 +31,28 @@ class MGSwipeablePageHeader: UIScrollView {
   required init(coder aDecoder: NSCoder) {
     pages = [PageTuple]()
     pageHeaderPairs = [PageHeaderPair]()
-    currentPosition = 0
     super.init(coder: aDecoder)
     self.pagingEnabled = true
     self.showsHorizontalScrollIndicator = false
     self.scrollEnabled = false
   }
   
+  func refreshViews() {
+    for var i = 0; i < self.pageHeaderPairs.count; i++ {
+      self.pageHeaderPairs[i].button.removeFromSuperview()
+    }
+    self.pageHeaderPairs.removeAll(keepCapacity: false)
+    buildButtonViews()
+  }
+  
+  func snapToPagePosition(pagePosition: CGFloat) {
+    var scrollOffset = self.bounds.size.width / 3 * pagePosition
+    self.contentOffset.x = scrollOffset
+  }
+  
   func addPages(pages: [PageTuple]) {
     self.pages += pages
-    buildButtonViews()
+    refreshViews()
   }
   
   override func layoutSubviews() {
@@ -57,7 +66,9 @@ class MGSwipeablePageHeader: UIScrollView {
       var button = UIButton(frame: buttonFrame)
       button.setTitle(pages[i].name, forState: UIControlState.Normal)
       button.addTarget(self, action: "didPressButton:", forControlEvents: UIControlEvents.TouchUpInside)
-      button.titleLabel?.font = UIFont.systemFontOfSize(22)
+      button.titleLabel?.numberOfLines = 1
+      button.titleLabel?.minimumScaleFactor = 0.8
+      button.titleLabel?.adjustsFontSizeToFitWidth = true
       self.addSubview(button)
       pageHeaderPairs.append((page, button))
     }
@@ -116,6 +127,12 @@ class MGSwipeablePageHeader: UIScrollView {
       }
       
       button.alpha = alpha
+      var upperCoeff: CGFloat = 5
+      var scale = ((upperCoeff - 1) + (alpha * 1.5)) / upperCoeff
+      
+      UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+        button.transform = CGAffineTransformMakeScale(scale, scale)
+      }, completion: nil)
     }
   }
 }
