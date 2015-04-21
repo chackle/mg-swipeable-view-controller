@@ -43,16 +43,6 @@ class MGSwipeableViewController: UIViewController, UIScrollViewDelegate, MGSwipe
     super.viewWillAppear(animated)
     self.view.setNeedsLayout()
     self.view.layoutIfNeeded()
-    var vc1 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
-    var vc2 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
-    var vc3 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
-    var vc4 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
-    var vc5 = ExampleViewController(nibName: "ExampleViewController", bundle: nil)
-    vc2.view.backgroundColor = UIColor.blueColor()
-    vc3.view.backgroundColor = UIColor.greenColor()
-    vc4.view.backgroundColor = UIColor.grayColor()
-    vc5.view.backgroundColor = UIColor.purpleColor()
-    self.addViewControllers([vc1, vc2, vc3, vc4, vc5], withTitles:["News Feed", "Some List", "Settings", "Profile", "Stuff"])
   }
 
   override func didReceiveMemoryWarning() {
@@ -66,7 +56,6 @@ class MGSwipeableViewController: UIViewController, UIScrollViewDelegate, MGSwipe
   override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
     pageHeader.refreshViews()
     pageView.refreshViews()
-    pageHeader.snapToPagePosition(currentPagePosition)
     pageView.snapToPagePosition(currentPagePosition)
   }
   

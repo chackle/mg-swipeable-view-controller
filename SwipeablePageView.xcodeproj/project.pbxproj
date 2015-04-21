@@ -14,6 +14,7 @@
 		54BC85091AE022A2002116E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BC85081AE022A2002116E5 /* Images.xcassets */; };
 		54BC850C1AE022A2002116E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BC850A1AE022A2002116E5 /* LaunchScreen.xib */; };
 		54BC85181AE022A2002116E5 /* SwipeablePageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BC85171AE022A2002116E5 /* SwipeablePageViewTests.swift */; };
+		54F3FE781AE6E49800611013 /* ExampleSwipeableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3FE771AE6E49800611013 /* ExampleSwipeableViewController.swift */; };
 		54F93DAA1AE1082600112F48 /* MGSwipeablePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DA91AE1082600112F48 /* MGSwipeablePageView.swift */; };
 		54F93DB01AE111AD00112F48 /* MGSwipeableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */; };
 		54F93DB11AE111AD00112F48 /* MGSwipeableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */; };
@@ -43,6 +44,7 @@
 		54BC85111AE022A2002116E5 /* SwipeablePageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeablePageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BC85161AE022A2002116E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54BC85171AE022A2002116E5 /* SwipeablePageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePageViewTests.swift; sourceTree = "<group>"; };
+		54F3FE771AE6E49800611013 /* ExampleSwipeableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleSwipeableViewController.swift; path = Example/ExampleSwipeableViewController.swift; sourceTree = "<group>"; };
 		54F93DA91AE1082600112F48 /* MGSwipeablePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeablePageView.swift; path = MGSwipeablePageView/MGSwipeablePageView.swift; sourceTree = "<group>"; };
 		54F93DAE1AE111AD00112F48 /* MGSwipeableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGSwipeableViewController.swift; path = MGSwipeablePageView/MGSwipeableViewController.swift; sourceTree = "<group>"; };
 		54F93DAF1AE111AD00112F48 /* MGSwipeableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MGSwipeableViewController.xib; path = MGSwipeablePageView/MGSwipeableViewController.xib; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				54BC85011AE022A2002116E5 /* AppDelegate.swift */,
+				54F3FE771AE6E49800611013 /* ExampleSwipeableViewController.swift */,
 				54F93DB41AE1186500112F48 /* ExampleViewController.swift */,
 				54F93DB51AE1186500112F48 /* ExampleViewController.xib */,
 				54BC85051AE022A2002116E5 /* Main.storyboard */,
@@ -253,6 +256,7 @@
 				54F93DAA1AE1082600112F48 /* MGSwipeablePageView.swift in Sources */,
 				54F93DB01AE111AD00112F48 /* MGSwipeableViewController.swift in Sources */,
 				54BC85021AE022A2002116E5 /* AppDelegate.swift in Sources */,
+				54F3FE781AE6E49800611013 /* ExampleSwipeableViewController.swift in Sources */,
 				54F93DB61AE1186500112F48 /* ExampleViewController.swift in Sources */,
 				5437EC701AE3A1F5003CE757 /* MGSwipeablePageHeaderDelegate.swift in Sources */,
 			);
