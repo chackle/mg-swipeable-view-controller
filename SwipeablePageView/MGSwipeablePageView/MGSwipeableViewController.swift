@@ -11,15 +11,28 @@ import UIKit
 typealias PageTuple = (viewController: UIViewController, name: String)
 
 class MGSwipeableViewController: UIViewController, UIScrollViewDelegate, MGSwipeablePageHeaderDelegate {
-
+  
+  private var currentPagePosition: CGFloat
+  
   var pages: [PageTuple]
-  var currentPagePosition: CGFloat
   
   @IBOutlet var pageView: MGSwipeablePageView!
   @IBOutlet var pageHeader: MGSwipeablePageHeader!
   
-  // MARK: Lifecycle
+  var pagePosition: CGFloat {
+    set {
+      currentPagePosition = newValue
+      if Int(currentPagePosition) > (pages.count-1) {
+        currentPagePosition = CGFloat(pages.count)
+      }
+      pageView.snapToPagePosition(currentPagePosition)
+    }
+    get {
+      return currentPagePosition
+    }
+  }
   
+  // MARK: Lifecycle
   required init(coder aDecoder: NSCoder) {
     pages = [PageTuple]()
     currentPagePosition = 1

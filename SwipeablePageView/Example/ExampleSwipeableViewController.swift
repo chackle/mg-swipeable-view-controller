@@ -22,5 +22,6 @@ class ExampleSwipeableViewController: MGSwipeableViewController {
     vc4.view.backgroundColor = UIColor.grayColor()
     vc5.view.backgroundColor = UIColor.purpleColor()
     self.addViewControllers([vc1, vc2, vc3, vc4, vc5], withTitles:["News Feed", "Some List", "Settings", "Profile", "Stuff"])
+    self.pagePosition = 3
   }
 }
